@@ -1,0 +1,21 @@
+# Port Server
+server:
+  port: 8000
+
+# Spring App Properties
+spring:
+  application:
+    name: GATEWAY-SERVICE
+#  cloud:
+#    gateway:
+#      routes:
+
+# Eureka Properties
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka
