@@ -6,9 +6,27 @@ server:
 spring:
   application:
     name: GATEWAY-SERVICE
-#  cloud:
-#    gateway:
-#      routes:
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri:
+            lb://USER-SERVICE
+          predicates:
+            - Path=/auth/**, /api/users/**
+        - id: MESSAGE-SERVICE
+          uri:
+            lb://MESSAGE-SERVICE
+          predicates:
+            - Path=/api/messages/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
 
 # Eureka Properties
 eureka:
