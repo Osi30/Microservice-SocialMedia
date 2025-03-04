@@ -41,4 +41,6 @@ public class User {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+//    private String thumbnail;
 }

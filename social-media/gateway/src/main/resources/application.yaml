@@ -19,6 +19,11 @@ spring:
             lb://MESSAGE-SERVICE
           predicates:
             - Path=/api/messages/**
+        - id: IMAGE-SERVICE
+          uri:
+            lb://IMAGE-SERVICE
+          predicates:
+            - Path=/api/images/**
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:

@@ -1,4 +1,4 @@
-package com.nam.user_service.dto;
+package com.nam.image_service.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
