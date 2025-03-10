@@ -24,6 +24,16 @@ spring:
             lb://IMAGE-SERVICE
           predicates:
             - Path=/api/images/**
+        - id: PRODUCT-SERVICE
+          uri:
+            lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/api/products/**
+        - id: ORDER-SERVICE
+          uri:
+            lb://ORDER-SERVICE
+          predicates:
+            - Path=/api/orders/**
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:

@@ -1,0 +1,29 @@
+# Port Server
+server:
+  port: 8005
+
+# Spring App
+spring:
+  application:
+    name: PRODUCT-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/socialmedia
+    username: root
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+# Eureka Properties
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka
